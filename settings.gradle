@@ -2,4 +2,5 @@ rootProject.name = 'TMS-Hometask'
 include 'Lesson1'
 include 'Lesson3'
 include 'Lesson4'
+include 'Lesson6'
 
