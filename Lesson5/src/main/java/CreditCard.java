@@ -6,12 +6,14 @@ public class CreditCard {
         this.accountNumb = accountNumb;
         this.currentNumb = currentNumb;
     }
-    public double currentUp (double p) {
-        currentNumb = currentNumb + p;
+    public double currentUp (double plus) {
+        currentNumb = currentNumb + plus;
         return currentNumb;
     }
-    public double currentDown (double m) {
-        currentNumb = currentNumb - m;
+    public double currentDown (double minus) {
+        if (currentNumb > 0 && minus > 0) {
+            currentNumb = currentNumb - minus;
+        }
         return currentNumb;
     }
     public void currentInf () {
