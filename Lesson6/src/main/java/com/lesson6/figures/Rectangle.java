@@ -1,8 +1,9 @@
 package com.lesson6.figures;
 
 public class Rectangle implements Figures {
-    int high;
-    int width;
+    private int high;
+    private int width;
+
     public Rectangle (int high, int width) {
         this.high = high;
         this.width = width;

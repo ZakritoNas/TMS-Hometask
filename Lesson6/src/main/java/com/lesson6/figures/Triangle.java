@@ -1,10 +1,11 @@
 package com.lesson6.figures;
 
     public class Triangle implements Figures {
-        int high;
-        int side1;
-        int side2;
-        int side3;
+        private int high;
+        private int side1;
+        private int side2;
+        private int side3;
+
         public Triangle (int high, int side1, int side2, int side3) {
             this.high = high;
             this.side1 = side1;

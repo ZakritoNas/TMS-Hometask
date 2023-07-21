@@ -1,8 +1,8 @@
 package com.lesson6.positions;
 
 public class Service {
-    public void getPosition (String text, Positions positions) {
-        System.out.print(text);
+    public void getPosition (Positions positions) {
+        System.out.print("Занимаемая должность: ");
         positions.getPosition();
     }
 }
