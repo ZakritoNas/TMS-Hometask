@@ -1,16 +1,16 @@
 public class CreditCard {
 
     private String accountNumb;
-    private double currentNumb;
-    public CreditCard (String accountNumb, double currentNumb) {
+    private long currentNumb;
+    public CreditCard (String accountNumb, long currentNumb) {
         this.accountNumb = accountNumb;
         this.currentNumb = currentNumb;
     }
-    public double currentUp (double plus) {
+    public double currentUp (long plus) {
         currentNumb = currentNumb + plus;
         return currentNumb;
     }
-    public double currentDown (double minus) {
+    public double currentDown (long minus) {
         if (currentNumb > 0 && minus > 0) {
             currentNumb = currentNumb - minus;
         }
