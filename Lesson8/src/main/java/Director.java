@@ -1,22 +1,47 @@
+import java.util.Arrays;
+
 public class Director extends Employee{
-
-
-    public Director (String name, String surname, int experience, Employ position) {
-        super(name, surname, experience, position);
-    }
-    @Override
-    public int wages () {
-        return 1000 * Employ.DIRECTOR.getCoefficient() * experience;
-    }
-
     Employee [] subord = new Employee[5];
-    public Employee[] addSubord (Employee employee) {
-        for (int i = 0; i < subord.length; i++){
-            if (subord[i] == null) {
-                subord[i] = employee;
-                break;
+
+    public Director (String name, String surname, int experience) {
+        super(name, surname, experience);
+        this.position = Employ.DIRECTOR;
+    }
+
+    public void addSubord (Employee ... employee) {
+        for (Employee empl : employee) {
+            for (int i = 0; i < subord.length; i++) {
+                if (subord[i] == null) {
+                    subord[i] = empl;
+                    break;
+                }
             }
         }
+    }
+
+    private int countSubord (){
+        int count = 0;
+        for (Employee empl : subord){
+            if (empl != null){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int wagesDir (){
+        int quantityEmployees = countSubord();
+        if (quantityEmployees > 1) {
+            return wages() * countSubord();
+        } else return wages();
+    }
+
+    public Employee[] getSubordArray (){ // можно ли так делать?
         return subord;
+    }
+
+    @Override
+    public String toString () {
+        return "Директор: " + name + surname + "," + " з/п: " + wagesDir() + ";";
     }
 }

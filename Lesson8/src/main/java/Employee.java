@@ -1,28 +1,25 @@
 public abstract class Employee {
-    private String name;
-    private String surname;
+    public String name;
+    public String surname;
     public int experience;
-    private Employ position;
+    public Employ position;
 
-
-
-    public Employee (String name, String surname, int experience, Employ position) {
+    public Employee (String name, String surname, int experience) {
         this.name = name;
         this.surname = surname;
         this.experience = experience;
-        this.position = position;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Employ getPosition() {
+        return position;
     }
 
     public int wages () {
         int wage = 1000 * position.getCoefficient() * experience;
         return wage;
-    }
-
-    public String toString (){
-        return name + surname;
-    }
-
-    public String getName() {
-        return name;
     }
 }
