@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Director extends Employee{
-    Employee [] subord = new Employee[5];
+    Employee [] subord = new Employee[7];
 
     public Director (String name, String surname, int experience) {
         super(name, surname, experience);
@@ -24,7 +24,7 @@ public class Director extends Employee{
         for (Employee empl : subord){
             if (empl != null){
                 count++;
-            }
+            } else break;
         }
         return count;
     }
