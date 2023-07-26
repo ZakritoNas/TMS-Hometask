@@ -42,6 +42,6 @@ public class Director extends Employee{
 
     @Override
     public String toString () {
-        return "Директор: " + name + surname + "," + " з/п: " + wagesDir() + ";";
+        return "Директор: " + name + " " + surname + "," + " з/п: " + wagesDir() + ";";
     }
 }

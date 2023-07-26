@@ -8,10 +8,13 @@ public class Service {
                 } else if (employee.getPosition().equals(Employ.DIRECTOR)) {
                     return findEmployee((Director) employee, name);
                 }
-            } else break;
+            } else {
+                break;
+            }
         }
         return false;
     }
+
 
     public static void infEmployee (Director director) {
         System.out.println(director.toString());
@@ -22,7 +25,9 @@ public class Service {
                 } else if (employee.getPosition().equals(Employ.DIRECTOR)) {
                     infEmployee((Director) employee);
                 }
-            } else break;
+            } else {
+                break;
+            }
         }
     }
 }

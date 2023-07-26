@@ -7,6 +7,6 @@ public class Worker extends Employee {
 
     @Override
     public String toString () {
-        return "Работник: " + name + surname + "," + " з/п: " + wages() + ";";
+        return "Работник: " + name + " " + surname + "," + " з/п: " + wages() + ";";
     }
 }
