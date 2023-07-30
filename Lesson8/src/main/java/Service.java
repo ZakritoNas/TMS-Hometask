@@ -9,7 +9,7 @@ public class Service {
                     return findEmployee((Director) employee, name);
                 }
             } else {
-                break;
+                continue;
             }
         }
         return false;

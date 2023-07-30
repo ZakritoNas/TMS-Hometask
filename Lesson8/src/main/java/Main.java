@@ -20,6 +20,6 @@ public class Main {
         System.out.println("Подчиненность сотрудников:");
         Service.infEmployee(director1);
 
-        System.out.println(Service.findEmployee(director1, "Александра"));
+        System.out.println(Service.findEmployee(director1, "Елизавета"));
     }
 }

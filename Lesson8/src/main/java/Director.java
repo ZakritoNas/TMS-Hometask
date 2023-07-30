@@ -24,7 +24,9 @@ public class Director extends Employee{
         for (Employee empl : subord){
             if (empl != null){
                 count++;
-            } else break;
+            } else {
+                break;
+            }
         }
         return count;
     }
@@ -33,7 +35,9 @@ public class Director extends Employee{
         int quantityEmployees = countSubord();
         if (quantityEmployees > 1) {
             return wages() * countSubord();
-        } else return wages();
+        } else {
+            return wages();
+        }
     }
 
     public Employee[] getSubordArray (){ // можно ли так делать?
