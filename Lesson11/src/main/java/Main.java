@@ -14,8 +14,9 @@ public class Main {
         stringArrayList.remove(1);
         System.out.println(stringArrayList);
 
+        System.out.println(stringArrayList.foundElement("hamster"));
         System.out.println(stringArrayList.foundElement("сat"));
-        System.out.println(stringArrayList.foundElement("сat"));
+
 
         stringArrayList.clear();
     }
