@@ -19,7 +19,8 @@ public class MainNumbers {
 
         System.out.println("Четные в диапазоне от 7 до 17");
         list.stream()
-                .filter (integer -> integer <= 17 && integer >= 7 && integer % 2 == 0)
+                .filter (integer -> integer <= 17 && integer >= 7)
+                .filter(integer -> integer % 2 == 0)
                 .forEach(System.out::println);
 
         System.out.println("Умноженные на 2");
