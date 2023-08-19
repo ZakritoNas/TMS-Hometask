@@ -16,7 +16,7 @@ public class MainApp {
         thread1.start();
         thread1.join();
 
-        System.out.println(counter.getCount());
+        System.out.println("Finish: " + counter.getCount());
 
     }
 }
