@@ -4,16 +4,16 @@ create table if not exists persons (
                                        sex varchar,
                                        birthday date
 );
+create table if not exists tipes (
+    type_of_hobby varchar primary key
+);
+
 
 create table if not exists hobbies (
                                      hobbies_id int primary key,
                                      hobbies_name varchar,
-                                     types varchar constraint fr_hobbykey references tipeshobby (typeofhobby)
+                                     types varchar constraint fr_hobby_key references tipes (type_of_hobby)
     );
-
-create table if not exists tipes (
-    type_of_hobby varchar primary key
-);
 
 create table intelligence (
                               person_id int constraint fr_person references persons (persons_id),
@@ -21,8 +21,8 @@ create table intelligence (
 );
 
 drop table persons;
-drop table hobbies;
 drop table tipes;
+drop table hobbies;
 drop table intelligence;
 
 
@@ -32,16 +32,16 @@ insert into persons (persons_id, name, sex, birthday) values (1, 'Alex', 'men', 
                                                      (4, 'Danya', 'men', '2002-09-10'),
                                                      (5, 'Dasha', 'women', '2003-10-10');
 
-insert into hobbies (hobbies_id, hobbyname, types) values (1, 'hockey', 'active'),
+insert into tipes (type_of_hobby) values ('active'),
+                                         ('passive');
+
+insert into hobbies (hobbies_id, hobbies_name, types) values (1, 'hockey', 'active'),
                                                 (2, 'basketball', 'active'),
                                                 (3, 'swimming',  'active'),
                                                 (4, 'reading',  'passive'),
                                                 (5, 'chess','passive'),
                                                 (6, 'cooking', 'passive'),
                                                 (7, 'needlework', 'passive');
-
-insert into tipes (type_of_hobby) values ('active'),
-                                            ('passive');
 
 
 insert into intelligence (person_id, hobby_id) values (1, 3),
