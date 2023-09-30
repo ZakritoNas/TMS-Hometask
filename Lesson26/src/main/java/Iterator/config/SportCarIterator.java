@@ -23,7 +23,7 @@ public class SportCarIterator implements Iterator{
     @Override
     public SportCar getNext() {
         if (!hasNext()) {
-            return null;
+            throw new RuntimeException();
         }
         SportCar sportCar = sportCars.get(position);
         position++;
