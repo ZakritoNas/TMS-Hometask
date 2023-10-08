@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class = "domain.Pair" name = "pair1">
+        <constructor-arg index="0" ref="rider1"/>
+        <constructor-arg index="1" ref="horse1"/>
+    </bean>
+    <bean class = "domain.Horse" name="horse1">
+        <constructor-arg type="java.lang.String" value="Kesya"/>
+    </bean>
+
+    <bean class = "domain.Rider" name="rider1">
+        <constructor-arg type="java.lang.String" value="Dasha"/>
+    </bean>
+
+    <bean class = "domain.Pair" name = "pair2">
+        <constructor-arg index="0" ref="rider2"/>
+        <constructor-arg index="1" ref="horse2"/>
+    </bean>
+    <bean class = "domain.Horse" name="horse2">
+        <constructor-arg type="java.lang.String" value="Ymka"/>
+    </bean>
+
+    <bean class = "domain.Rider" name="rider2">
+        <constructor-arg type="java.lang.String" value="Nastya"/>
+    </bean>
+    <bean class = "domain.Pair" name = "pair3" depends-on="rider3, horse3">
+        <constructor-arg index="0" ref="rider3"/>
+        <constructor-arg index="1" ref="horse3"/>
+    </bean>
+    <bean class = "domain.Horse" name="horse3">
+        <constructor-arg type="java.lang.String" value="Night"/>
+    </bean>
+
+    <bean class = "domain.Rider" name="rider3">
+        <constructor-arg type="java.lang.String" value="Pasha"/>
+    </bean>
+
+    <bean class = "service.PairServiceImpl" name = "pairService">
+        <constructor-arg>
+            <list>
+                <ref bean = "pair1"/>
+                <ref bean = "pair2"/>
+                <ref bean = "pair3"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean class="domain.Wallet" name = "wallet"/>
+    <bean class="service.WalletServiceImpl" name = "walletService">
+        <constructor-arg ref="wallet"/>
+    </bean>
+
+    <bean class="service.RacingServiceImpl" name = "racingService">
+        <constructor-arg index="0" ref="pairService"/>
+        <constructor-arg index="1" ref="walletService"/>
+    </bean>
+
+</beans>
