@@ -1,4 +1,4 @@
-package domain;
+package hometask.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,11 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Horse {
+public class Rider {
     private String name;
-    private double speed = 0;
-
-    public Horse(String name) {
-        this.name = name;
-    }
 }

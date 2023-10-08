@@ -1,9 +1,9 @@
-package service;
+package hometask.service;
 
-import domain.Wallet;
+import hometask.domain.Wallet;
 import lombok.Data;
 import org.springframework.stereotype.Service;
-import service.interfaces.WalletService;
+import hometask.service.interfaces.WalletService;
 
 @Data
 @Service

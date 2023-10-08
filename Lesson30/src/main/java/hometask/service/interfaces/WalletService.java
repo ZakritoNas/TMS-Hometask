@@ -1,6 +1,6 @@
-package service.interfaces;
+package hometask.service.interfaces;
 
-import domain.Wallet;
+import hometask.domain.Wallet;
 
 public interface WalletService {
     Wallet addWinnings();

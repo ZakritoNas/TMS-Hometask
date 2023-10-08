@@ -1,16 +1,15 @@
-package config;
+package hometask.config;
 
-import domain.Horse;
-import domain.Pair;
-import domain.Rider;
-import domain.Wallet;
+import hometask.domain.Horse;
+import hometask.domain.Pair;
+import hometask.domain.Rider;
+import hometask.domain.Wallet;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan(basePackages = {"service", "utils"})
 @EnableAspectJAutoProxy
 public class AppConfig {
     @Bean
@@ -55,5 +54,4 @@ public class AppConfig {
     Wallet wallet (){
         return new Wallet();
     }
-
 }

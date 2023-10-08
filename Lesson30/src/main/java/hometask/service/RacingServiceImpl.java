@@ -1,9 +1,9 @@
-package service;
+package hometask.service;
 
-import domain.Pair;
+import hometask.domain.Pair;
+import hometask.utils.MyAnnotation;
 import org.springframework.stereotype.Service;
-import service.interfaces.RacingService;
-import utils.MyAnnotation;
+import hometask.service.interfaces.RacingService;
 
 import java.util.Random;
 import java.util.Scanner;

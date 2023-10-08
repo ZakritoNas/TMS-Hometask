@@ -1,4 +1,4 @@
-package utils;
+package hometask.utils;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class MyAspect {
 
-    @Pointcut("@annotation(utils.MyAnnotation)")
+    @Pointcut("@annotation(hometask.utils.MyAnnotation)")
       public void myPointcut(){
       }
 

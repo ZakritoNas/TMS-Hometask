@@ -1,10 +1,10 @@
-package service;
+package hometask.service;
 
-import domain.Pair;
+import hometask.domain.Pair;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.stereotype.Service;
-import service.interfaces.PairService;
+import hometask.service.interfaces.PairService;
 
 import java.util.ArrayList;
 import java.util.List;
