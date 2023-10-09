@@ -2,12 +2,15 @@ package hometask.service;
 
 import hometask.domain.Pair;
 import hometask.utils.MyAnnotation;
+import lombok.Data;
+import lombok.Setter;
 import org.springframework.stereotype.Service;
 import hometask.service.interfaces.RacingService;
 
 import java.util.Random;
 import java.util.Scanner;
 
+@Data
 @Service
 public class   RacingServiceImpl implements RacingService {
     private final PairServiceImpl pairs;
