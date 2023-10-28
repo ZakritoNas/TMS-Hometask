@@ -19,8 +19,10 @@ public class MyController {
 private final ContractService contractService;
 
     @GetMapping
-    public String page(){
-        return "mypage";
+    public ModelAndView page(@ModelAttribute Contract contract){
+        ModelAndView modelAndView = new ModelAndView("mypage");
+        modelAndView.addObject("contracts", contractService.getContract());
+        return modelAndView;
     }
 
     @PostMapping
