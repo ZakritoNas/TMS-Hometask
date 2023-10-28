@@ -20,11 +20,11 @@ public class PersonService {
        return saved;
    }
 
-    public PhoneEntity save (PhoneEntity phone){
+    public Integer save (PhoneEntity phone){
         Session session = HibernateConfig.create();
         Transaction transaction = session.beginTransaction();
 
-        PhoneEntity saved = (PhoneEntity) session.save(phone);
+        Integer saved = (Integer) session.save(phone);
         transaction.commit();
         session.close();
         return saved;
