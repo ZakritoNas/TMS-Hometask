@@ -1,6 +1,7 @@
 package entity;
 
 import enums.TaskStatus;
+import lombok.*;
 
 import javax.persistence.*;
 
