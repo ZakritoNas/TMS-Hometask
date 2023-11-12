@@ -1,0 +1,17 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  mvc:
+    view:
+      prefix: /pages/
+      suffix: .html
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/films2
+    username: postgres
+    password: 08102003
