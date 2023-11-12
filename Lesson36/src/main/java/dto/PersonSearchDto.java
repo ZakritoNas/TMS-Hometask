@@ -16,11 +16,11 @@ import java.util.List;
 @Builder
 public class PersonSearchDto {
 
+    private Integer id;
     private String name;
     private PersonType type;
     private LocalDate birthdayFrom;
     private LocalDate birthdayTo;
     private Boolean isMan;
-    private List<TaskEntity> tasks;
 
 }
