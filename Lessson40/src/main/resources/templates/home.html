@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/save" method = "post" modelAttribute="film">
+    <input type="text" name = "name" placeholder="filmName"><br>
+    <input type="text" name = "genre" placeholder="genre"><br>
+    <input type="date" name = "dateOfIssue" placeholder="date"><br>
+    <input type="number" name = "rating" placeholder="rating"><br>
+    <input type="submit" value="save">
+</form>
+<br>
+
+<ul>
+    <li th:each="flm : ${films}">[[${flm.name]]</li>
+</ul>
+
+<form th:action="@{/home/update/{id}(id=${flm.getId()})}" method="post" th:each="flm, iter : ${films}">
+    <input type="number" value="id" th:value="${flm.getRating()}"><br>
+    <input type="submit" value="Update"><br>
+</form>
+
+</body>
+</html>
