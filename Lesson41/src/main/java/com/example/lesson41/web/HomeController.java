@@ -8,6 +8,7 @@ import com.example.lesson41.service.impl.FilmServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -36,7 +37,6 @@ public class HomeController {
         modelAndView.addObject("film", new FilmCreateDto());
         return modelAndView;
     }
-
 
     @PostMapping("/search")
     public ModelAndView search (FilmSearchDto dto){

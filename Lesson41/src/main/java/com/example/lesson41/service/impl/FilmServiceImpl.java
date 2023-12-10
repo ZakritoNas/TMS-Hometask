@@ -45,7 +45,9 @@ public class FilmServiceImpl implements FilmService {
             String name = searchDto.getName();
             Genres genre = searchDto.getGenre();
             Date date = searchDto.getDateOfIssue();
-            Integer rating = searchDto.getRating();
+            Integer from = searchDto.getFrom();
+            Integer to = searchDto.getTo();
+
 
             var predicates = new ArrayList<Predicate>();
 
@@ -61,9 +63,13 @@ public class FilmServiceImpl implements FilmService {
                 Predicate dateEq = builder.equal(root.get("date"), date);
                 predicates.add(dateEq);
             }
-            if (rating != null){
-                Predicate ratingEq = builder.equal(root.get("rating"), rating);
-                predicates.add(ratingEq);
+            if (from != null){
+                Predicate ratingGe = builder.ge(root.get("rating"), from);
+                predicates.add(ratingGe);
+            }
+            if (to != null){
+                Predicate ratingLe = builder.le(root.get("rating"), to);
+                predicates.add(ratingLe);
             }
 
             Predicate[] array = predicates.toArray(Predicate[]::new);

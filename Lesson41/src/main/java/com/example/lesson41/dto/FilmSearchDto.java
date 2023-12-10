@@ -16,5 +16,6 @@ public class FilmSearchDto {
     private String name;
     private Genres genre;
     private Date dateOfIssue;
-    private Integer rating;
+    private Integer to;
+    private Integer from;
 }

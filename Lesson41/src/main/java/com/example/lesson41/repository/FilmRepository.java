@@ -15,6 +15,4 @@ import java.util.Optional;
 public interface FilmRepository extends JpaRepository<FilmEntity, Integer>, JpaSpecificationExecutor <FilmEntity> {
     @Modifying
     Optional<FilmEntity> updateRating(Integer id, Integer rating);
-
-    List<FilmEntity> findByNameAndGenreAndDateOfIssueAndRating(String name, Genres genre, Date dateOfIssue, Integer rating);
 }
