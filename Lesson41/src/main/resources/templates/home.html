@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/save}" method = "post" th:object="${film}">
+    <input type="text" name = "name" placeholder="filmName" th:field="*{name}"><br>
+    <input type="text" name = "genre" placeholder="genre" th:field="*{genre}"><br>
+    <input type="date" name = "dateOfIssue" placeholder="date" th:field="*{dateOfIssue}"><br>
+    <input type="number" name = "rating" placeholder="rating" th:field="*{rating}"><br>
+    <input type="submit" value="save">
+</form>
+<br>
+<hr>
+<ul>
+    <li th:each="film : ${films}">[[${film.name]]</li>
+</ul>
+
+<form th:action="@{/search}" method = "post" th:object="${searchDto}">
+    <input type="text" name = "name" placeholder="filmName" th:field="*{name}"><br>
+    <input type="text" name = "genre" placeholder="genre" th:field="*{genre}"><br>
+    <input type="date" name = "dateOfIssue" placeholder="date" th:field="*{dateOfIssue}"><br>
+    <input type="number" name = "rating" placeholder="rating" th:field="*{rating}"><br>
+    <input type="submit" value="search">
+</form>
+<br>
+<hr>
+<p th:each="film: ${films}">
+    [(${film.name})]
+</p>
+
+<form th:action="@{/home/update/{id}(id=${flm.getId()})}" method="post" th:each="flm, iter : ${films}">
+    <input type="number" value="id" th:value="${flm.getRating()}"><br>
+    <input type="submit" value="Update"><br>
+</form>
+
+</body>
+</html>
