@@ -6,6 +6,7 @@ import com.example.lesson46il.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -28,5 +29,10 @@ public class StoreServiceImpl implements CarService {
     @Override
     public List<CarDto> findAll() {
         return client.findAll();
+    }
+
+    public List<String> blackList(){
+        List<String> blackList = List.of("orange", "green", "yellow");
+        return blackList;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.lesson46il.dto;
 
+import com.example.lesson46il.client.validation.CheckCarColorValidation;
 import com.example.lesson46il.enums.Model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,5 +14,6 @@ import lombok.NoArgsConstructor;
 public class CarDto {
     private Integer id;
     private Model model;
+    @CheckCarColorValidation
     private String color;
 }
