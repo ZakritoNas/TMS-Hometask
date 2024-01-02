@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 
 @Service
-public class DBUserDetailsService implements UserDetailsService {
+public class DBUserDetailsServiceImpl implements UserDetailsService {
     private final PasswordEncoder passwordEncoder;
     private final PersonRepository repository;
 

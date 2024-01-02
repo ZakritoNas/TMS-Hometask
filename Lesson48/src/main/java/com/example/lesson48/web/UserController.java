@@ -1,7 +1,7 @@
 package com.example.lesson48.web;
 
 import com.example.lesson48.dto.PersonDto;
-import com.example.lesson48.service.DBUserDetailsService;
+import com.example.lesson48.service.DBUserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping()
 public class UserController {
 
-    private final DBUserDetailsService userService;
+    private final DBUserDetailsServiceImpl userService;
 
         @PostMapping("/register")
         public String save (PersonDto person){
